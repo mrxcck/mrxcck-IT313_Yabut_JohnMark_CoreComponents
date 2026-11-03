@@ -1,6 +1,9 @@
 # IT313 - Laboratory 6: Student Directory Viewer
 **React Native Core Components in Action**
 
+**Student:** John Mark Yabut  
+**Repository Name:** `IT313_Yabut_JohnMark_CoreComponents`  
+
 ## Overview & Problem Statement
 The IT313 registrar has provided a list of students requiring academic advising this term. This application is an Expo (React Native) screen that allows an academic adviser to browse, search, and flag students in need of advising.
 
@@ -111,7 +114,7 @@ In React Native:
 
 1. **Clone or navigate to the repository:**
    ```bash
-   cd IT313_LastName_FirstName_CoreComponents
+   cd IT313_Yabut_JohnMark_CoreComponents
    ```
 
 2. **Install dependencies:**
@@ -145,6 +148,6 @@ git commit -m "feat: complete Laboratory 6 Student Directory with React Native C
 
 # 4. Create and push to GitHub repository
 git branch -M main
-git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/IT313_LastName_FirstName_CoreComponents.git
+git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/IT313_Yabut_JohnMark_CoreComponents.git
 git push -u origin main
 ```

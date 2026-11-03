@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IT313 Lab 6 - Visual Presentation Slides</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .slide { display: none; }
+    .slide.active { display: flex; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col items-center justify-center p-4 antialiased font-sans select-none">
+
+  <!-- Main Presentation Container -->
+  <div class="w-full max-w-4xl bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col" style="min-height: 580px;">
+
+    <!-- Top Slide Header Bar -->
+    <div class="px-6 py-3 bg-slate-950/80 border-b border-slate-800 flex items-center justify-between text-xs text-slate-400">
+      <div class="flex items-center space-x-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+        <span class="font-semibold text-slate-200">IT 313 — Laboratory 6</span>
+        <span class="text-slate-600">|</span>
+        <span>Student Directory Viewer</span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <span id="slideIndicator" class="font-mono bg-slate-800 px-2 py-0.5 rounded text-blue-400 font-bold">Slide 1 / 6</span>
+      </div>
+    </div>
+
+    <!-- Slides Body Container -->
+    <div class="flex-1 p-8 flex flex-col justify-center">
+
+      <!-- SLIDE 1: Title & Student Info -->
+      <div class="slide active flex-col items-center text-center space-y-6">
+        <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">
+          Mobile Programming • Video Demonstration
+        </div>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+          React Native Core Components in Action
+        </h1>
+        <p class="text-slate-400 max-w-xl text-sm md:text-base leading-relaxed">
+          Building an interactive academic advising student directory with <code class="text-blue-300 font-mono">View</code>, <code class="text-blue-300 font-mono">Text</code>, <code class="text-blue-300 font-mono">Image</code>, <code class="text-blue-300 font-mono">ScrollView</code>, <code class="text-blue-300 font-mono">TextInput</code>, and <code class="text-blue-300 font-mono">Pressable</code>.
+        </p>
+
+        <div class="w-full max-w-md bg-slate-800/60 border border-slate-700/60 rounded-xl p-4 text-left space-y-2 text-sm shadow-inner mt-4">
+          <div class="flex justify-between"><span class="text-slate-400">Student:</span><span class="font-bold text-white">John Mark Yabut</span></div>
+          <div class="flex justify-between"><span class="text-slate-400">Course / Section:</span><span class="font-medium text-slate-200">IT 313</span></div>
+          <div class="flex justify-between"><span class="text-slate-400">Repository:</span><span class="font-mono text-xs text-blue-400 truncate max-w-[240px]">mrxcck-IT313_Yabut_JohnMark_CoreComponents</span></div>
+        </div>
+
+        <p class="text-xs text-slate-500 italic">Press "Next" below or use Left/Right arrow keys on your keyboard to navigate.</p>
+      </div>
+
+      <!-- SLIDE 2: Interactive App Preview & Wireframe -->
+      <div class="slide flex-col items-center space-y-4">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-white">Interactive Mobile Screen UI</h2>
+          <p class="text-xs text-slate-400">Exact layout according to the laboratory wireframe specifications</p>
+        </div>
+
+        <!-- Simulated Mobile Frame -->
+        <div class="w-full max-w-sm bg-slate-100 rounded-3xl border-4 border-slate-700 shadow-2xl overflow-hidden text-slate-800 flex flex-col" style="height: 400px;">
+          <!-- App Header -->
+          <div class="bg-[#1E2348] text-white px-4 py-3 border-b border-[#171B38]">
+            <h3 class="font-bold text-base leading-tight">Student Directory</h3>
+            <p class="text-[11px] text-slate-300">5 students this term</p>
+          </div>
+
+          <!-- App Search Box -->
+          <div class="bg-white px-3 py-2 border-b border-slate-200">
+            <input id="demoSearch" type="text" placeholder="🔍 Search students..." oninput="handleDemoSearch(this.value)"
+                   class="w-full bg-slate-100 border border-slate-300 text-xs rounded-lg px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-blue-500 text-slate-800 placeholder-slate-400">
+          </div>
+
+          <!-- App Scrollable List -->
+          <div id="demoStudentList" class="flex-1 overflow-y-auto p-2 space-y-2 bg-slate-50">
+            <!-- Dynamic JS items inserted here -->
+          </div>
+        </div>
+        <p class="text-xs text-slate-400">💡 <em>Try typing in the search box above or clicking the flag buttons live!</em></p>
+      </div>
+
+      <!-- SLIDE 3: React Native Core Components Map -->
+      <div class="slide flex-col space-y-4">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-white">React Native Core Components Applied</h2>
+          <p class="text-xs text-slate-400">How each component was selected and used to solve the problem</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+          <div class="bg-slate-800/80 border border-slate-700 p-3 rounded-xl space-y-1">
+            <div class="flex items-center space-x-1.5 text-blue-400 font-bold text-sm">
+              <span>📦</span><span>View</span>
+            </div>
+            <p class="text-slate-300 font-medium">Layout & Container</p>
+            <p class="text-slate-400 text-[11px]">Equivalent to <code class="text-slate-300">&lt;div&gt;</code>. Used Flexbox (<code class="text-slate-300">flexDirection: 'row'</code>) to align photo and text side by side.</p>
+          </div>
+
+          <div class="bg-slate-800/80 border border-slate-700 p-3 rounded-xl space-y-1">
+            <div class="flex items-center space-x-1.5 text-amber-400 font-bold text-sm">
+              <span>🔤</span><span>Text</span>
+            </div>
+            <p class="text-slate-300 font-medium">Typography Display</p>
+            <p class="text-slate-400 text-[11px]">Renders headers, student full names (<code class="text-slate-300">fontWeight: '700'</code>), year levels, and button titles.</p>
+          </div>
+
+          <div class="bg-slate-800/80 border border-slate-700 p-3 rounded-xl space-y-1">
+            <div class="flex items-center space-x-1.5 text-emerald-400 font-bold text-sm">
+              <span>🖼️</span><span>Image</span>
+            </div>
+            <p class="text-slate-300 font-medium">Remote Photos</p>
+            <p class="text-slate-400 text-[11px]">Renders student avatars. Must have explicit <code class="text-slate-300">width: 50</code>, <code class="text-slate-300">height: 50</code>, and rounded corners.</p>
+          </div>
+
+          <div class="bg-slate-800/80 border border-slate-700 p-3 rounded-xl space-y-1">
+            <div class="flex items-center space-x-1.5 text-purple-400 font-bold text-sm">
+              <span>📜</span><span>ScrollView</span>
+            </div>
+            <p class="text-slate-300 font-medium">Scrollable Card List</p>
+            <p class="text-slate-400 text-[11px]">Wraps all student cards, enabling vertical touch scrolling beyond screen boundaries with stable keys.</p>
+          </div>
+
+          <div class="bg-slate-800/80 border border-slate-700 p-3 rounded-xl space-y-1">
+            <div class="flex items-center space-x-1.5 text-cyan-400 font-bold text-sm">
+              <span>🔍</span><span>TextInput</span>
+            </div>
+            <p class="text-slate-300 font-medium">Search Filtering</p>
+            <p class="text-slate-400 text-[11px]">Controlled input bound via <code class="text-slate-300">value</code> and <code class="text-slate-300">onChangeText</code> for real-time case-insensitive search.</p>
+          </div>
+
+          <div class="bg-slate-800/80 border border-slate-700 p-3 rounded-xl space-y-1">
+            <div class="flex items-center space-x-1.5 text-rose-400 font-bold text-sm">
+              <span>👆</span><span>Pressable</span>
+            </div>
+            <p class="text-slate-300 font-medium">Touch Interaction</p>
+            <p class="text-slate-400 text-[11px]">Interactive advising button with a dynamic style function <code class="text-slate-300">({ pressed }) =&gt; [...]</code> for tactile feedback.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: Component Structure Architecture -->
+      <div class="slide flex-col space-y-4">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-white">Component Structure Architecture</h2>
+          <p class="text-xs text-slate-400">Separation of concerns: Stateful Container vs. Presentational Component</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <!-- Parent -->
+          <div class="bg-slate-800/90 border border-blue-500/40 rounded-xl p-4 space-y-2">
+            <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+              <span class="font-bold text-blue-400 text-sm">StudentDirectory.js</span>
+              <span class="bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded text-[10px]">Parent / Container</span>
+            </div>
+            <ul class="space-y-1.5 text-slate-300 text-[11px]">
+              <li>• Holds <strong>students</strong> state (5 student objects).</li>
+              <li>• Holds <strong>searchQuery</strong> state for TextInput.</li>
+              <li>• Implements <strong>filteredStudents</strong> via <code class="text-blue-300">.filter()</code>.</li>
+              <li>• Renders cards inside <code class="text-blue-300">&lt;ScrollView&gt;</code> with <code class="text-blue-300">key={student.id}</code>.</li>
+              <li>• Defines <code class="text-blue-300">handleToggleFlag(id)</code> updating flagged status immutably.</li>
+            </ul>
+          </div>
+
+          <!-- Child -->
+          <div class="bg-slate-800/90 border border-emerald-500/40 rounded-xl p-4 space-y-2">
+            <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+              <span class="font-bold text-emerald-400 text-sm">StudentCard.js</span>
+              <span class="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded text-[10px]">Child / Presentational</span>
+            </div>
+            <ul class="space-y-1.5 text-slate-300 text-[11px]">
+              <li>• Receives: <code class="text-emerald-300">id, name, year, photoUrl, flagged, onToggleFlag</code>.</li>
+              <li>• Uses Flexbox row layout (<code class="text-emerald-300">View</code>).</li>
+              <li>• Renders explicit avatar dimensions (<code class="text-emerald-300">Image</code>).</li>
+              <li>• Displays student name &amp; year level (<code class="text-emerald-300">Text</code>).</li>
+              <li>• Interactive Flag Button (<code class="text-emerald-300">Pressable</code>) executing <code class="text-emerald-300">onToggleFlag(id)</code>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 5: Controlled vs Uncontrolled TextInput Experiment -->
+      <div class="slide flex-col space-y-4">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-white">Requirement 6: Uncontrolled Input Experiment</h2>
+          <p class="text-xs text-slate-400">Comparing Controlled vs. Uncontrolled TextInput behavior</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <!-- Controlled -->
+          <div class="bg-emerald-950/30 border border-emerald-500/50 rounded-xl p-4 space-y-2">
+            <span class="font-bold text-emerald-400 text-sm">✅ Controlled (With value &amp; onChangeText)</span>
+            <div class="bg-slate-950 p-2.5 rounded font-mono text-[11px] text-emerald-300">
+              &lt;TextInput<br>
+              &nbsp;&nbsp;value={searchQuery}<br>
+              &nbsp;&nbsp;onChangeText={setSearchQuery}<br>
+              /&gt;
+            </div>
+            <p class="text-slate-300 text-[11px]">
+              Every keystroke calls <code class="text-emerald-400">setSearchQuery</code>, updating state and triggering a re-render. The list filters immediately in real-time.
+            </p>
+          </div>
+
+          <!-- Uncontrolled -->
+          <div class="bg-rose-950/30 border border-rose-500/50 rounded-xl p-4 space-y-2">
+            <span class="font-bold text-rose-400 text-sm">❌ Uncontrolled (Without value &amp; onChangeText)</span>
+            <div class="bg-slate-950 p-2.5 rounded font-mono text-[11px] text-rose-300">
+              &lt;TextInput<br>
+              &nbsp;&nbsp;placeholder="Search..."<br>
+              /&gt;
+            </div>
+            <p class="text-slate-300 text-[11px]">
+              Characters appear inside the input via native buffer, but React state is <strong>never updated</strong>. The component does not re-render and the list remains unfiltered.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 6: Common Errors & Submission Summary -->
+      <div class="slide flex-col space-y-4">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-white">Common Errors &amp; Submission Verification</h2>
+          <p class="text-xs text-slate-400">Key problem-solving insight and submission readiness</p>
+        </div>
+
+        <div class="bg-slate-800/90 border border-amber-500/30 rounded-xl p-4 space-y-2 text-xs">
+          <span class="font-bold text-amber-400 text-sm">⚠️ Common Problem: Remote Image Missing</span>
+          <p class="text-slate-300 text-[11px]">
+            In HTML web, images have intrinsic dimensions from downloaded files. In React Native, remote images (<code class="text-amber-300">uri</code>) <strong>do not calculate dimensions automatically</strong>. If <code class="text-amber-300">width</code> and <code class="text-amber-300">height</code> are omitted, the image defaults to <code class="text-amber-300">0x0</code> (invisible).
+          </p>
+          <p class="text-slate-400 text-[11px]">
+            <strong>Resolution:</strong> Explicitly specify <code class="text-emerald-400">width: 50, height: 50, borderRadius: 25</code> in <code class="text-slate-300">StyleSheet.create</code>.
+          </p>
+        </div>
+
+        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-4 text-xs space-y-2">
+          <span class="font-bold text-blue-400 text-sm">📋 Submission Summary</span>
+          <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-300">
+            <div>• Repository: <strong class="text-white">Public on GitHub</strong></div>
+            <div>• Name: <strong class="text-white">John Mark Yabut</strong></div>
+            <div>• Components: <strong class="text-white">StudentCard, StudentDirectory, App</strong></div>
+            <div>• Documentation: <strong class="text-white">README.md included</strong></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="px-6 py-3 bg-slate-950/80 border-t border-slate-800 flex items-center justify-between">
+      <button id="prevBtn" onclick="prevSlide()" class="px-4 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors">
+        ← Previous
+      </button>
+
+      <span class="text-xs text-slate-500 hidden sm:inline">Use Arrow Keys (← / →) or click buttons</span>
+
+      <button id="nextBtn" onclick="nextSlide()" class="px-4 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white transition-colors shadow">
+        Next →
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const indicator = document.getElementById('slideIndicator');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    // Demo students for Slide 2
+    let students = [
+      { id: "s1", name: "Ana Cruz", year: "3rd Year", img: 1, flagged: true },
+      { id: "s2", name: "Bea Santos", year: "2nd Year", img: 2, flagged: false },
+      { id: "s3", name: "Cid Ramos", year: "4th Year", img: 3, flagged: false },
+      { id: "s4", name: "Dex Alonzo", year: "1st Year", img: 4, flagged: false },
+      { id: "s5", name: "Eli Tan", year: "3rd Year", img: 5, flagged: false },
+    ];
+    let demoQuery = "";
+
+    function renderDemoStudents() {
+      const container = document.getElementById('demoStudentList');
+      if (!container) return;
+      const filtered = students.filter(s => s.name.toLowerCase().includes(demoQuery.toLowerCase().trim()));
+      
+      if (filtered.length === 0) {
+        container.innerHTML = '<div class="text-center py-6 text-xs text-slate-400">No students found matching "' + demoQuery + '"</div>';
+        return;
+      }
+
+      container.innerHTML = filtered.map(s => `
+        <div class="bg-white rounded-xl p-2.5 flex items-center justify-between border border-slate-200 shadow-sm">
+          <div class="flex items-center space-x-2.5">
+            <div class="w-10 h-10 rounded-full bg-slate-300 flex items-center justify-center font-bold text-slate-700 text-xs overflow-hidden border border-slate-200">
+              <img src="https://i.pravatar.cc/100?img=${s.img}" class="w-full h-full object-cover" onerror="this.style.display='none'">
+              <span>${s.name.split(' ').map(n=>n[0]).join('')}</span>
+            </div>
+            <div>
+              <p class="font-bold text-xs text-slate-800">${s.name}</p>
+              <p class="text-[10px] text-slate-500">${s.year}</p>
+            </div>
+          </div>
+          <button onclick="toggleDemoFlag('${s.id}')" class="px-2.5 py-1 rounded text-[11px] font-semibold border transition-all ${s.flagged ? 'bg-amber-600 border-amber-700 text-white' : 'bg-white border-slate-300 text-slate-600 hover:bg-slate-50'}">
+            ${s.flagged ? '★ Flagged' : '☆ Flag'}
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function toggleDemoFlag(id) {
+      students = students.map(s => s.id === id ? { ...s, flagged: !s.flagged } : s);
+      renderDemoStudents();
+    }
+
+    function handleDemoSearch(val) {
+      demoQuery = val;
+      renderDemoStudents();
+    }
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      indicator.textContent = `Slide ${index + 1} / ${slides.length}`;
+      prevBtn.style.visibility = index === 0 ? 'hidden' : 'visible';
+      nextBtn.textContent = index === slides.length - 1 ? 'Finish' : 'Next →';
+      if (index === 1) renderDemoStudents();
+    }
+
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    showSlide(0);
+    renderDemoStudents();
+  </script>
+</body>
+</html>
